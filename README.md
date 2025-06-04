@@ -15,7 +15,7 @@ This project includes:
 
 ---
 
-Live Link :
+Live Link : [Click Here](https://preaus007.github.io/Natures-Platter/)
 
 ---
 
