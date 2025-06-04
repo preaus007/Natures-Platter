@@ -49,13 +49,15 @@
         <div class="w-20 md:w-40">
           <img class="w-full block" src="./assets/logo-green.png" alt="logo" />
         </div>
+
         <ul
-          class="z-50 h-screen md:h-auto font-bold text-base md:text-md bg-green-400 md:bg-transparent absolute md:static top-0 -right-full p-8 md:p-0 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-10 transition-all duration-300 ease-in-out"
+          class="hidden z-50 font-bold text-base md:text-md md:flex flex-row items-center justify-center gap-10"
         >
           <li><a href="#">Products</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Contact us</a></li>
         </ul>
+
         <div class="flex items-center gap-8">
           <div class="text-2xl flex items-center gap-6">
             <i class="fa fa-search cursor-pointer"></i>
@@ -76,6 +78,48 @@
               Register
             </button>
           </div>
+        </div>
+
+        <div
+          id="mobileNavItem"
+          class="z-100 lg:hidden bg-[#EFEBE3] h-auto w-full py-36 fixed top-0 -right-full transition-all ease-in duration-300"
+        >
+          <ul class="flex flex-col justify-center items-center gap-y-5">
+            <li
+              class="hover:text-[#179800] transition-all ease-in duration-300"
+            >
+              <i id="close-btn" class="fa fa-times" aria-hidden="true"></i>
+            </li>
+            <li
+              class="hover:text-[#179800] transition-all ease-in duration-300"
+            >
+              <a href="#">Product</a>
+            </li>
+            <li
+              class="hover:text-[#179800] transition-all ease-in duration-300"
+            >
+              <a href="#">Services</a>
+            </li>
+            <li
+              class="hover:text-[#179800] transition-all ease-in duration-300"
+            >
+              <a href="#">Contact us</a>
+            </li>
+            <li>
+              <button
+                class="py-2.5 px-4 bg-white text-base font-medium text-black rounded-lg border border-[var(--green-primary)] cursor-pointer transition duration-300"
+              >
+                Login
+              </button>
+            </li>
+            <li>
+              <button
+                class="py-2.5 px-4 bg-green-400 text-base font-medium text-white rounded-lg border border-transparent cursor-pointer transition duration-300 hover:bg-green-500"
+              >
+                Register
+              </button>
+            </li>
+          </ul>
         </div>
       </nav>
 
@@ -261,18 +305,10 @@
           <div class="space-y-2">
             <p>Follow Us</p>
             <div class="flex space-x-4 text-white text-xl">
-              <a href="https://www.facebook.com/preaus007/" target="_blank"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="https://www.facebook.com/preaus007/" target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="https://www.facebook.com/preaus007/" target="_blank"
-                ><i class="fab fa-pinterest"></i
-              ></a>
-              <a href="https://www.facebook.com/preaus007/" target="_blank"
-                ><i class="fab fa-youtube"></i
-              ></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
         </div>
@@ -281,12 +317,18 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const menuToggle = document.getElementById("menu-toggle");
-        const navMenu = document.querySelector("nav ul");
+        const openBtn = document.getElementById("menu-toggle");
+        const closeBtn = document.getElementById("close-btn");
+        const navMenu = document.querySelector("#mobileNavItem");
 
-        menuToggle.addEventListener("click", function () {
-          navMenu.classList.toggle("right-0");
-          navMenu.classList.toggle("-right-full");
+        openBtn.addEventListener("click", function () {
+          navMenu.classList.remove("-right-full");
+          navMenu.classList.add("right-0");
+        });
+
+        closeBtn.addEventListener("click", function () {
+          navMenu.classList.add("-right-full");
+          navMenu.classList.remove("right-0");
         });
       });
 
