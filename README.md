@@ -15,7 +15,7 @@ This project includes:
 
 ---
 
-Live Link : [Click Here](https://preaus007.github.io/Natures-Platter/)
+Live Link : [Click Here](https://natures-platter28.netlify.app/)
 
 ---
 
